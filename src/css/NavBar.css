@@ -1,0 +1,13 @@
+.nav-container {
+ background-color: #EDE5D8;
+ padding: 2rem;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ color: #AA5353;
+ font-family: 'Lucida Grande';
+}
+
+a :hover {
+    color: darkgray;
+}
