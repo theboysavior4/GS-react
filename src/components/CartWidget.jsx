@@ -1,6 +1,10 @@
+import { BsCart3 } from "react-icons/bs";
+
 const CartWidget = () => {
     return(
-        <span>🛒</span>
+        <span>
+            <BsCart3 fontSize={'1.4 rem'} />
+        </span>
     )
 
 }
