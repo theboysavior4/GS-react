@@ -1,4 +1,0 @@
-//Spread Operator
-
-
-//Destructuring
