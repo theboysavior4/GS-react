@@ -1,10 +1,10 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemCount from './components/ItemCount'
-import ItemListContainer from './components/ItemListContainer';
-import NavBar from './components/NavBar'
-import ItemDetailContainer from './components/ItemDetailContainer'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ItemListContainer from './components/ItemListContainer'
+import NavBar from './components/NavBar';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import { Link, BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -15,7 +15,6 @@ function App() {
       <Route path='/' element={ <ItemListContainer saludo='Bienvenidos a mi app'/>}/>
       <Route path='/category/:categoryId' element={ <ItemListContainer saludo='Estas en la categoria:'/>}/>
       <Route path='/item/:id' element={<ItemDetailContainer/>}/>
-      <Route path='*' element={<ErrorPage/>}/>
     </Routes>
     </BrowserRouter>
   )  

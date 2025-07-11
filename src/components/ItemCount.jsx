@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState} from 'react'
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({stock, onAdd}) => {
     const [count, setCount] =useState(1)
-    const [compra, setCompra]= useState(false)
     const sumar = ()=>{
         if(count < stock){
 
@@ -15,24 +14,23 @@ const ItemCount = ({stock}) => {
             setCount(count -1)
         }
     }
-    const comprarItem = () => {
-        setCompra(!compra)
-    }
-     
-     useEffect(()=>{
-        console.log('Con el array de dependencias vacio, me ejecuto UNA VEZ')
-    },[])
-       
-    console.log('soy item count')
- return (
-    <div>
+    
+   const comprar = () =>{
+    onAdd(count)
+   }
+
+
+  return (
+    <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
         <div>
         <button className='btn btn-danger' onClick={restar}>-</button>
         <span className='btn'>{count}</span>
         <button className='btn btn-success' onClick={sumar}>+</button>
     </div>
-    <button className='btn btn-primary' onClick={comprarItem} disabled={stock === 0} >Comprar</button>
+    {}
+    <button className='btn btn-primary'  disabled={stock === 0} onClick={()=>onAdd(count)}>Comprar</button>
     </div>
   )
 }
+
 export default ItemCount
